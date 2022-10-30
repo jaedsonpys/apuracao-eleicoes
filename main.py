@@ -68,7 +68,7 @@ if __name__ == '__main__':
             candidates = get_candidates()
             print_candidates(candidates)
             
-            sleep(60)
+            sleep(30)
         except KeyboardInterrupt:
             os.system('clear')
             break
