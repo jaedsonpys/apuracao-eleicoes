@@ -19,3 +19,15 @@ def get_candidates() -> list:
     result: dict = request.json()
 
     return result.get('cand')
+
+
+def print_candidates(candidates: list) -> None:
+    for cand in candidates:
+        print('=-' * 10)
+        print(f'\033[42m  {cand["n"]}  \033[m - {cand["nm"]}')
+        print(f'Número de votos: {cand["vap"]}\n')
+
+        votes_percent = cand["vap"].replace(',', '.')
+        votes_percent = float(votes_percent)
+
+        percentage_loadbar(votes_percent)
