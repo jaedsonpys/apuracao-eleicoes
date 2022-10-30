@@ -26,6 +26,16 @@ def get_candidates() -> list:
     return result.get('cand')
 
 
+def get_total_urns() -> float:
+    result = get_results()
+    total = result.get('pst')
+
+    total = total.replace(',', '.')
+    total = float(total)
+
+    return total
+
+
 def print_candidates(candidates: list) -> None:
     for cand in candidates:
         print('=-' * 10)
