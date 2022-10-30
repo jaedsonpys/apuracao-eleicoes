@@ -43,6 +43,15 @@ def get_blank_votes(result: dict) -> int:
     return blank_votes
 
 
+def get_null_votes(result: dict) -> int:
+    null_votes = result.get('tvn')
+
+    null_votes = null_votes.replace(',', '.')
+    null_votes = int(null_votes)
+
+    return null_votes
+
+
 def print_candidates(candidates: list) -> None:
     for cand in candidates:
         print('=-' * 10)
@@ -73,9 +82,11 @@ if __name__ == '__main__':
 
             total_urns = get_total_urns(result)
             blank_votes = get_blank_votes(result)
+            null_votes = get_null_votes(result)
 
             print(f'Total de urnas apuradas: {total_urns}%')
-            print(f'Votos em branco: {blank_votes}\n')
+            print(f'Votos em branco: {blank_votes}')
+            print(f'Votos nulos: {blank_votes}\n')
 
             candidates = get_candidates(result)
             print_candidates(candidates)
