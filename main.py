@@ -28,7 +28,7 @@ def print_candidates(candidates: list) -> None:
         print(f'\n\033[42m  {cand["n"]}  \033[m - {cand["nm"]}')
         print(f'Número de votos: {cand["vap"]}\n')
 
-        votes_percent = cand["vap"].replace(',', '.')
+        votes_percent = cand["pvap"].replace(',', '.')
         votes_percent = float(votes_percent)
 
         percentage_loadbar(votes_percent)
