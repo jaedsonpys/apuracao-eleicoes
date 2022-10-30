@@ -21,13 +21,11 @@ def get_results() -> dict:
     return result
 
 
-def get_candidates() -> list:
-    result = get_results()
+def get_candidates(result: dict) -> list:
     return result.get('cand')
 
 
-def get_total_urns() -> float:
-    result = get_results()
+def get_total_urns(result: dict) -> float:
     total = result.get('pst')
 
     total = total.replace(',', '.')
@@ -36,8 +34,7 @@ def get_total_urns() -> float:
     return total
 
 
-def get_blank_votes() -> int:
-    result = get_results()
+def get_blank_votes(result: dict) -> int:
     blank_votes = result.get('vb')
 
     blank_votes = blank_votes.replace(',', '.')
@@ -72,13 +69,15 @@ if __name__ == '__main__':
             print('\033[3;32mDados coletados do site Resultados TSE\033[m')
             print('\033[3;32mScript by \033[4m@jaedsonpys\033[m\n')
 
-            total_urns = get_total_urns()
-            blank_votes = get_blank_votes()
+            result = get_results()
+
+            total_urns = get_total_urns(result)
+            blank_votes = get_blank_votes(result)
 
             print(f'Total de urnas apuradas: {total_urns}%')
             print(f'Votos em branco: {blank_votes}\n')
 
-            candidates = get_candidates()
+            candidates = get_candidates(result)
             print_candidates(candidates)
             
             sleep(30)
