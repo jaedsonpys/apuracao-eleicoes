@@ -36,6 +36,16 @@ def get_total_urns() -> float:
     return total
 
 
+def get_blank_votes() -> int:
+    result = get_results()
+    blank_votes = result.get('vb')
+
+    blank_votes = blank_votes.replace(',', '.')
+    blank_votes = int(blank_votes)
+
+    return blank_votes
+
+
 def print_candidates(candidates: list) -> None:
     for cand in candidates:
         print('=-' * 10)
@@ -63,7 +73,10 @@ if __name__ == '__main__':
             print('\033[3;32mScript by \033[4m@jaedsonpys\033[m\n')
 
             total_urns = get_total_urns()
-            print(f'Total de urnas apuradas: {total_urns}%\n')
+            blank_votes = get_blank_votes()
+
+            print(f'Total de urnas apuradas: {total_urns}%')
+            print(f'Votos em branco: {blank_votes}\n')
 
             candidates = get_candidates()
             print_candidates(candidates)
