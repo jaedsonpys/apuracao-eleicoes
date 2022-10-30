@@ -14,10 +14,15 @@ def percentage_loadbar(percentage: float):
     print(f'{percentage}% [{"".join(candidate_bar)}]')
 
 
-def get_candidates() -> list:
+def get_results() -> dict:
     request = requests.get(url)
-    result: dict = request.json()
+    result = request.json()
 
+    return result
+
+
+def get_candidates() -> list:
+    result = get_results()
     return result.get('cand')
 
 
