@@ -1,6 +1,3 @@
-import os
-from time import sleep
-
 import requests
 
 resource = 'https://resultados.tse.jus.br'
@@ -38,18 +35,22 @@ def print_candidates(candidates: list) -> None:
         print()
 
 
-while True:
-    try:
-        os.system('clear')
+if __name__ == '__main__':
+    import os
+    from time import sleep
 
-        print('Apuração de dados das \033[1mEleições de 2022\033[m')
-        print('\033[3;32mDados coletados do site Resultados TSE\033[m')
-        print('\033[3;32mScript by \033[4m@jaedsonpys\033[m\n')
+    while True:
+        try:
+            os.system('clear')
 
-        candidates = get_candidates()
-        print_candidates(candidates)
-        
-        sleep(60)
-    except KeyboardInterrupt:
-        os.system('clear')
-        break
+            print('Apuração de dados das \033[1mEleições de 2022\033[m')
+            print('\033[3;32mDados coletados do site Resultados TSE\033[m')
+            print('\033[3;32mScript by \033[4m@jaedsonpys\033[m\n')
+
+            candidates = get_candidates()
+            print_candidates(candidates)
+            
+            sleep(60)
+        except KeyboardInterrupt:
+            os.system('clear')
+            break
