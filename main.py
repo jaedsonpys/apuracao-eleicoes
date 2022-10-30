@@ -37,3 +37,19 @@ def print_candidates(candidates: list) -> None:
         percentage_loadbar(votes_percent)
         print()
 
+
+while True:
+    try:
+        os.system('clear')
+
+        print('Apuração de dados das \033[1mEleições de 2022\033[m')
+        print('\033[3;32mDados coletados do site Resultados TSE\033[m')
+        print('\033[3;32mScript by \033[4m@jaedsonpys\033[m\n')
+
+        candidates = get_candidates()
+        print_candidates(candidates)
+        
+        sleep(60)
+    except KeyboardInterrupt:
+        os.system('clear')
+        break
