@@ -62,6 +62,9 @@ if __name__ == '__main__':
             print('\033[3;32mDados coletados do site Resultados TSE\033[m')
             print('\033[3;32mScript by \033[4m@jaedsonpys\033[m\n')
 
+            total_urns = get_total_urns()
+            print(f'Total de urnas apuradas: {total_urns}%\n')
+
             candidates = get_candidates()
             print_candidates(candidates)
             
