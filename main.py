@@ -11,7 +11,7 @@ def percentage_loadbar(percentage: float):
     while len(candidate_bar) < 100:
         candidate_bar.append(' ')
 
-    print(f'{percentage}% [{"".join(candidate_bar)}]')
+    print(f'{percentage:.2f}% [{"".join(candidate_bar)}]')
 
 
 def get_results() -> dict:
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             blank_votes = get_blank_votes(result)
             null_votes = get_null_votes(result)
 
-            print(f'Total de urnas apuradas: {total_urns}%')
+            print(f'Total de urnas apuradas: {total_urns:.2f}%')
             print(f'Votos em branco: {blank_votes}')
             print(f'Votos nulos: {blank_votes}\n')
 
