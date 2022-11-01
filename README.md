@@ -2,8 +2,12 @@
 
 Acompanhe o resultado das **Eleições 2022** por este simples script escrito em Python. Os dados exibidos são:
 
+- Quantidade de urnas apuradas;
+- Número de votos em branco;
+- Número de votos nulos;
 - Nome do candidato;
 - Número do candidato;
+- Número de votos ao candidato.
 
 ## License
 
